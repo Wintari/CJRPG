@@ -9,21 +9,21 @@ private:
 
 public:
 
-    char **getVisMap()
+    char **getMap()
     {
-        char **visMap = new char*[MAPSIZE];
+        char **Map = new char*[MAPSIZE];
         for(int i = 0; i < MAPSIZE;i++){
-            visMap[i] = new char[MAPSIZE];
+            Map[i] = new char[MAPSIZE];
         }
 
         for(int y = 0; y < MAPSIZE; y++)
         {
             for(int x = 0; x < MAPSIZE; x++)
             {
-                visMap[y][x] = worldMap[y][x];
+                Map[y][x] = worldMap[y][x];
             }
         }
-        return visMap;
+        return Map;
     }
 
 
@@ -36,6 +36,10 @@ public:
                 worldMap[y][x] = arr[y][x];
             }
         }
+    }
+
+    char getObject(int x, int y){
+        return worldMap[y][x];
     }
 };
 
