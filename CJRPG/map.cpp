@@ -12,7 +12,8 @@ public:
     char **getMap()
     {
         char **Map = new char*[MAPSIZE];
-        for(int i = 0; i < MAPSIZE;i++){
+        for(int i = 0; i < MAPSIZE; i++)
+        {
             Map[i] = new char[MAPSIZE];
         }
 
@@ -38,9 +39,13 @@ public:
         }
     }
 
-    char getObject(int x, int y){
+    char getObject(int x, int y)
+    {
         return worldMap[y][x];
     }
+
+    void setObject(int x, int y, char object)
+    {
+        worldMap[y][x] = object;
+    }
 };
-
-
